@@ -31,7 +31,7 @@ public class CommandController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<TopModel> createCommands(@RequestBody Map<String, CommandModel[]> commands) {
-        LOG.info("{}", () -> "createCommand POST called");
+        LOG.info("createCommands POST called");
 
         TopModel topModel = commandService.addCommands(commands);
         return ResponseEntity.ok(topModel);

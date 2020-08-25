@@ -1,6 +1,18 @@
 # Getting Started
 
-### Developer considerations
+### Technologies used:
+* Spring Boot 2.3.3.RELEASE
+* Spring Boot Maven plugin
+* Spring Rest Controller
+* Java 8 streams
+* Java 8 collections
+* Java 8 time module
+* Lombok Java bean utility (autogenerate get'ers and set'ers and more)
+* Log4j2 lambda logging (does not create log string unless log will be logged)
+* AssertJ Fluent JUnit Assertions
+* Object oriented tracking classes for commands
+
+### Developer considerations:
 * Json output is not perfect according to specs: Array of top commands per state wrapped in a topStateCommands JSon parent
 * Skipped Javadocs. Wanted to focus on the code. I adapt verbosity of Javadocs per coding standards (per company)
 * Used Spring Initialzr to get me started with a comprehensive Maven pom.xml file
@@ -22,7 +34,7 @@
 * CommandServiceImpl methods are too big, I need to refactor to componentize methods better
 * Granularity of the timestamps is seconds since epoch (default TimeZone). Just picked a convenient precision.
 
-## NOTE: Misunderstood requirements, 
+## NOTE: Misunderstood requirements:
 * The code produces the necessary output, however I misunderstood the requirements
 * I thought the top commands nationally was to be pulled from the top commands per state (which is incorrect)
 * It needs to be the aggregate of the commands across all states
