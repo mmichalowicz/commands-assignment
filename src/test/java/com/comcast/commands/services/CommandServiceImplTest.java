@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 public class CommandServiceImplTest {
@@ -79,5 +80,17 @@ public class CommandServiceImplTest {
         assertThat(topModel.getTopCommandsNationally()).isNotNull();
         assertThat(topModel.getTopCommandsNationally().length).isEqualTo(1);
         assertThat(topModel.getTopCommandsNationally()[0]).isEqualTo("command1");
+    }
+
+    @Test
+    public void testAddCommands_nullCommands() {
+
+        // JUnit5 assertThrows replacing JUnit4 @Test(expected = NullPointerException.class)
+        Exception e = assertThrows(RuntimeException.class, () -> {
+            CommandServiceImpl commandService = new CommandServiceImpl();
+            TopModel topModel = commandService.addCommands(null);
+        });
+
+        assertThat(e.toString()).isEqualTo("java.lang.NullPointerException: Commands cannot be null");
     }
 }

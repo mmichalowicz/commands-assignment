@@ -9,11 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.LinkedHashMap;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -32,10 +28,8 @@ public class CommandServiceImpl implements ICommandService {
      */
     public synchronized TopModel addCommands(Map<String, CommandModel[]> commands) {
         LOG.info("addCommands called, ({}) commands", () -> commands == null ? "null" : commands.size());
-        if (commands == null) {
-            throw new RuntimeException("commands cannot be null");
-        }
 
+        Objects.requireNonNull(commands, "Commands cannot be null");
         commands.forEach((state, stateCommands) -> {
             addCommand(state, stateCommands);
         });
