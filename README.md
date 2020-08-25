@@ -11,6 +11,7 @@
 * I used Lombok annotations to generate builders, and get'ers/set'ers which requires lombok plugin in IntelliJ/Eclipse
 * mvn clean install works
 * mvn spring-boot:run works
+* logging is verbose (at info level) and I would crank down verbosity/levels before QA
 * Minimal JUnits however I am comfortable with many many flavors of JUnits, mocking, Spring testing
 * When working for Comcast, a new module I created I brought to 100% JUnit coverage (above the call of duty)
 * Lombok however will compile and mvn spring-boot:run should still run
