@@ -28,7 +28,7 @@ public class CommandServiceImpl implements ICommandService {
 
     /**
      * Add commands associated with states.
-     * FIXME: Method is too big, need to better componentize methods such as breaking out tracking National top commands
+     * FIXME: Method is too big, need to better componentize method
      */
     public synchronized TopModel addCommands(Map<String, CommandModel[]> commands) {
         LOG.info("addCommands called, ({}) commands", () -> commands == null ? "null" : commands.size());
@@ -64,10 +64,19 @@ public class CommandServiceImpl implements ICommandService {
             }
         });
         topModel.setTopStateCommands(topCommands);
+        String[] topCommandNamesArray = this.calculateTopCommandNames(this.topCommandsNationally);
+        topModel.setTopCommandsNationally(topCommandNamesArray);
 
-        // Tracking top commands nationally was an afterthought and done differently, I would have tracked a little
-        // differently. I am spending jirations below sorting when I "should have" kept the top national in sorted order
-        // to avoid all this sorting code...
+        return topModel;
+    }
+
+    /**
+     * Calculate top command names nationally.
+     * Tracking top commands nationally was an afterthought and done differently, I would have tracked a little
+     * differently. I am spending jirations below sorting when I "should have" kept the top national in sorted order
+     * to avoid all this sorting code...
+     */
+    protected String[] calculateTopCommandNames(Map<String, Integer> topCommandsNationally) {
         Map<String, Integer> topCommandNamesMap = this.topCommandsNationally.entrySet().stream()
                 .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
@@ -75,9 +84,7 @@ public class CommandServiceImpl implements ICommandService {
         Set<String> topCommandNames = topCommandNamesMap.keySet();
         String[] topCommandNamesArray = new String[topCommandNames.size()];
         topCommandNames.toArray(topCommandNamesArray);
-        topModel.setTopCommandsNationally(topCommandNamesArray);
-
-        return topModel;
+        return topCommandNamesArray;
     }
 
     protected void addCommand(String stateName, CommandModel[] commandModels) {
