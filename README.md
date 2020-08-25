@@ -18,6 +18,7 @@
 * A forced delay was added after adding each command to show that processing times are being updated
 * I wasn't quite sure what processing time means, but I inferred it as when a command for a state is encountered
 * I used AssertJ fluent assertions for JUnits; I learned AssertJ from working at Comcast
+* CommandServiceImpl methods are too big, I need to refactor to componentize methods better
 
 ## NOTE: Misunderstood requirements, 
 * The code produces the necessary output, however I misunderstood the requirements

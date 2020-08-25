@@ -26,6 +26,10 @@ public class CommandServiceImpl implements ICommandService {
     protected Map<String, StateCommands> allStateCommands = new HashMap<>();
     protected Map<String, Integer>       topCommandsNationally = new HashMap<>();
 
+    /**
+     * Add commands associated with states.
+     * FIXME: Method is too big, need to better componentize methods such as breaking out tracking National top commands
+     */
     public synchronized TopModel addCommands(Map<String, CommandModel[]> commands) {
         LOG.info("addCommands called, ({}) commands", () -> commands == null ? "null" : commands.size());
         if (commands == null) {
