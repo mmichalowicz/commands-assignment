@@ -17,6 +17,7 @@
 * I used AssertJ fluent assertions for JUnits; I learned AssertJ from working at Comcast
 
 ## NOTE: Misunderstood requirements, 
+* The code produces the necessary output, however I misunderstood the requirements
 * I thought the top commands nationally was to be pulled from the top commands per state (which is incorrect)
 * It needs to be the aggregate of the commands across all states
 * This would allow a non-top command for a state to be a higher national aggregate overall. 
