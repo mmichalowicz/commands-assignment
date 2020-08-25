@@ -7,8 +7,10 @@
 * Skipped slf4j and used log4j2 (I understand slf4j may be more appropriate).. Wanted to use lazy logging lambdas
 * commands.json at the root is the file I used calling from PostMan with application/json as content-type
 * commands.json was edited from the document I was sent since quotes were wrong, commands had spaces in them
+* results.json at the root is the result from the body of the response in POSTMAN
 * I used Lombok annotations to generate builders, and get'ers/set'ers which requires lombok plugin in IntelliJ/Eclipse
 * mvn clean install works
+* mvn spring-boot:run works
 * Minimal JUnits however I am comfortable with many many flavors of JUnits, mocking, Spring testing
 * When working for Comcast, a new module I created I brought to 100% JUnit coverage (above the call of duty)
 * Lombok however will compile and mvn spring-boot:run should still run

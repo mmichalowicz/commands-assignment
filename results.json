@@ -1,0 +1,24 @@
+{
+  "topStateCommands": {
+    "alabama": {
+      "mostFrequentCommand": "CNN",
+      "startProcessingTime": 1598320392,
+      "stopProcessingTime": 1598320393
+    },
+    "florida": {
+      "mostFrequentCommand": "Turn off the TV",
+      "startProcessingTime": 1598320395,
+      "stopProcessingTime": 1598320395
+    },
+    "maryland": {
+      "mostFrequentCommand": "Game of Thrones",
+      "startProcessingTime": 1598320396,
+      "stopProcessingTime": 1598320397
+    }
+  },
+  "topCommandsNationally": [
+    "Game of Thrones",
+    "Turn off the TV",
+    "CNN"
+  ]
+}
