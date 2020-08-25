@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.comcast</groupId>
-	<artifactId>commandModels-assignment</artifactId>
+	<artifactId>commands-assignment</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>commandModels-assignment</name>
+	<name>commands-assignment</name>
 	<description>Comcast programming assignment</description>
 
 	<properties>
