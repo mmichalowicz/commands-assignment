@@ -40,5 +40,4 @@ public class CreatedCommand {
     public long getStopProcessingEpochSec() {
         return this.stopProcessingInstant == null ? -1 : this.stopProcessingInstant.getEpochSecond();
     }
-
 }

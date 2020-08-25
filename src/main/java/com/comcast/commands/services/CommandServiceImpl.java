@@ -49,6 +49,8 @@ public class CommandServiceImpl implements ICommandService {
                     .build();
             topCommands.put(stateCommands.getStateName(), topCommandModel);
             Integer commandCountNational = this.topCommandsNationally.get(commandName);
+
+            // NOTE: I misunderstood requirements, cannot compute top nationally by only looking at top for state
             int topCount = topCommandForState.getCount();
             if (commandCountNational == null) {
                 this.topCommandsNationally.put(commandName, topCount);
